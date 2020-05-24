@@ -47,5 +47,6 @@ app.post('/events', (req,res)=>{
 });
 
 app.listen(4000, ()=> {
+    console.log('Listening in 4000 for whatever')
     console.log('Listening in 4000')
 })
