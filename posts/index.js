@@ -30,7 +30,7 @@ app.post('/posts', async (req,res)=>{
     }
 
     try {
-        await axios.post('http://localhost:4005/events', event);
+        await axios.post('http://event-bus:4005/events', event);
     }
     catch(err) {
         console.log(err.message);
@@ -47,6 +47,5 @@ app.post('/events', (req,res)=>{
 });
 
 app.listen(4000, ()=> {
-    console.log('Listening in 4000 for whatever')
     console.log('Listening in 4000')
 })
