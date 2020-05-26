@@ -36,7 +36,7 @@ app.post('/posts/:id/comments', async (req,res)=>{
     }
 
     try {
-        await axios.post('http://localhost:4005/events', event);
+        await axios.post('http://event-bus:4005/events', event);
     }
     catch(err) {
         console.log(err.message);
@@ -72,7 +72,7 @@ app.post('/events', async (req,res)=>{
         }
 
 
-        await axios.post('http://localhost:4005/events', event);
+        await axios.post('http://event-bus:4005/events', event);
     }
 
     res.send({});
