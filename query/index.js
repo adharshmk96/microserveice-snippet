@@ -50,7 +50,13 @@ const handleEvent = (type,data) => {
 
 app.listen (4002, async () => {
     console.log("Listening on 4002");
-    const res = await axios.get('http://event-bus:4005/events');
+    let res = null;
+    try {
+        res = await axios.get('http://event-bus:4005/events');
+    }
+    catch(err) {
+        console.log(err.message)
+    }
 
     for(let event of res.data) {
         console.log("Processing Event:", event.type)
